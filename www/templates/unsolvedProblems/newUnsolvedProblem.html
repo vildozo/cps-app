@@ -29,13 +29,13 @@
                 <i class="icon dark ion-chevron-right"></i>
               </div>
             </a>
-            <ion-option-button class="button button-balanced ion-edit" ng-click="editUnsolvedProblem(unsolvedProblem)" ng-hide="{{shouldShowReorder}}"></ion-option-button>
-            <ion-option-button class="button-assertive ion-trash-a" ng-click="showConfirm(unsolvedProblem)"></ion-option-button>
-            <ion-option-button class="button-positive ion-more" ng-click="showActionsheet(unsolvedProblem)"></ion-option-button>
+            <ion-option-button id="edit_button" class="button button-balanced ion-edit" ng-click="editUnsolvedProblem(unsolvedProblem)" ng-hide="{{shouldShowReorder}}"></ion-option-button>
+            <ion-option-button id="delete_button" class="button-assertive ion-trash-a" ng-click="showConfirm(unsolvedProblem)"></ion-option-button>
+            <ion-option-button id="more_button" class="button-positive ion-more" ng-click="showActionsheet(unsolvedProblem)"></ion-option-button>
             <ion-reorder-button class="ion-navicon-round" on-reorder="moveItem(unsolvedProblem, $fromIndex, $toIndex)"> </ion-reorder-button>
           </ion-item>
           <div class="item item-text-wrap" ng-if="unsolvedProblems.length === 0">
-            <p>No unsolved problems registered. Please register one above.</p>
+            <p id="no_unsolved_problems_message">No unsolved problems registered. Please register one above.</p>
           </div>
       </ion-list>
     </div>
