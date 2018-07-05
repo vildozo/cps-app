@@ -9,10 +9,10 @@
           <h2>I wonder if there's something we can do about...</h2>
         </div>
         <div class="col col-10">
-          <i ng-show="childsConcerns.length > 1 && showChilds" ng-click="shouldShowReorder = !shouldShowReorder" ng-class="(shouldShowReorder) ? 'icon-floppy' : 'icon-sort-alt-down' ;"></i>
+          <i  ng-show="childsConcerns.length > 1 && showChilds" ng-click="shouldShowReorder = !shouldShowReorder" ng-class="(shouldShowReorder) ? 'icon-floppy' : 'icon-sort-alt-down' ;"></i>
         </div>
         <div class="col col-10">
-          <i ng-if = "childsConcerns.length > 1" ng-class="showChilds ? 'ion-ios-arrow-up': 'ion-ios-arrow-down'" ng-click="toggleChilds()"></i>
+          <i id="expand_childs_concern" ng-if = "childsConcerns.length > 1" ng-class="showChilds ? 'ion-ios-arrow-up': 'ion-ios-arrow-down'" ng-click="toggleChilds()"></i>
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@
             <h2>and also do something about...</h2>
           </div>
           <div class="col col-10">
-              <i ng-if = "adultsConcerns.length > 1" ng-class="showAdults? 'ion-ios-arrow-up': 'ion-ios-arrow-down'" ng-click="toggleAdults()"></i>
+              <i id="expand_adults_concern" ng-if = "adultsConcerns.length > 1" ng-class="showAdults? 'ion-ios-arrow-up': 'ion-ios-arrow-down'" ng-click="toggleAdults()"></i>
           </div>
         </div>
       </div>
@@ -74,12 +74,12 @@
           <i class="icon {{getRatingIcon(solution)}}"></i>
           <p>{{solution.description}}</p>
           <i class="icon ion-star" ng-click="showRatingPopup(solution,unsolvedProblem)"></i>
-          <ion-option-button class="button button-balanced ion-edit" ng-click="editSolution(solution)"></ion-option-button>
-          <ion-option-button ng-click="showDeletionConfirm(solution)" class="button-assertive ion-trash-a" ></ion-option-button>
-          <ion-option-button ng-click="goToSolution(solution)" class="button-positive ion-eye" ></ion-option-button>
+          <ion-option-button id="edit_button" class="button button-balanced ion-edit" ng-click="editSolution(solution)"></ion-option-button>
+          <ion-option-button id="delete_button" ng-click="showDeletionConfirm(solution)" class="button-assertive ion-trash-a" ></ion-option-button>
+          <ion-option-button id="comment_button" ng-click="goToSolution(solution)" class="button-positive ion-eye" ></ion-option-button>
         </ion-item>
         <div class="item item-text-wrap" ng-if="solutions.length == 0">
-          <p>No possible solutions registered. Please register one above, once you agree upon a solution.</p>
+          <p id="message">No possible solutions registered. Please register one above, once you agree upon a solution.</p>
         </div>
       </ion-list>
     </div>
